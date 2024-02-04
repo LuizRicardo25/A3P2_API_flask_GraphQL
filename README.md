@@ -37,7 +37,7 @@ source venv/bin/activate
 Com o ambiente virtual ativado, instale as dependências necessárias:
 
 ```bash
-pip install Flask graphene flask-graphql
+pip install Flask graphene Flask-GraphQL
 ```
 
 ### Desenvolvimento da API GraphQL
