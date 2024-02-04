@@ -50,7 +50,7 @@ Defina seus tipos GraphQL, por exemplo, um tipo User e uma Query para buscar usu
 
 python
 
-``` bash
+```bash
 import graphene
 
 class User(graphene.ObjectType):
@@ -61,12 +61,15 @@ class Query(graphene.ObjectType):
     user = graphene.Field(User, id=graphene.Int())
     def resolve_user(self, info, id):
         return User(id=1, name="Usuário Exemplo")
-Configure a Aplicação Flask
+   ```
+
+### Configure a Aplicação Flask
 
 Em app.py, configure o Flask para usar a API GraphQL.
 
 python
 
+```bash
 from flask import Flask
 from flask_graphql import GraphQLView
 from schema import schema
@@ -78,15 +81,14 @@ app.add_url_rule(
 )
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    
+    app.run(debug=True)    
     ```
-    
+ 
+ ```
 ### Executando a Aplicação
 Para executar a aplicação, use:
 
 ```bash
-
 python app.py
 ``` 
 ### Testando a API
