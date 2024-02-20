@@ -96,3 +96,49 @@ Acesse http://localhost:5000/graphql no navegador para usar o GraphiQL, uma inte
 
 ## Conclusão
 Parabéns! Você agora tem uma API GraphQL básica rodando com Flask e Graphene. Experimente criar novos tipos e queries para expandir sua API.
+
+
+## Configuração no GitHub Codespace
+
+Para iniciar o serviço no GitHub Codespace, siga os passos abaixo:
+
+1. Crie um novo Codespace a partir do repositório do projeto.
+2. Uma vez dentro do Codespace, abra o terminal integrado.
+3. Ative o ambiente virtual (se aplicável):
+
+   ```bash
+   source .venv/bin/activate
+   ```
+
+Defina a variável de ambiente FLASK_APP:
+
+```bash
+export FLASK_APP=app.py
+```
+
+Inicie o servidor Flask:
+
+```bash
+flask run --host=0.0.0.0
+```
+Isso iniciará o servidor Flask e o tornará acessível através do encaminhamento de porta do Codespace.
+
+Testando a API GraphQL
+Para testar a API GraphQL, você pode utilizar o seguinte exemplo de consulta GraphQL:
+
+```bash
+query {
+  user(id: 1) {
+    id
+    name
+  }
+}
+```
+## Para executar esta consulta:
+
+Acesse o GraphiQL navegando para http://localhost:5000/graphql no seu navegador (substitua localhost pelo URL do Codespace, se necessário).
+Insira a consulta no painel esquerdo do GraphiQL.
+Pressione o botão "Play" ou "Execute Query" para rodar a consulta.
+O resultado será exibido no painel direito do GraphiQL.
+Documentação da API
+Para mais informações sobre os tipos e consultas disponíveis na API, consulte a documentação gerada pelo GraphiQL acessando a URL da API no seu navegador e clicando em "Docs" no canto superior direito da interface do GraphiQL.
